@@ -2,7 +2,7 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Article from "../components/Article";
 
-test("renders a <article> element", () => {
+test("renders an <article> element", () => {
   const { container } = render(
     <Article
       title={"Components 101"}
@@ -13,7 +13,7 @@ test("renders a <article> element", () => {
   expect(container.querySelector("article")).toBeInTheDocument();
 });
 
-test("renders a <h3> with the title of the post", () => {
+test("renders an <h3> with the title of the post", () => {
   render(
     <Article
       title={"Components 101"}

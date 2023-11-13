@@ -1,6 +1,18 @@
+// src/__tests__/ArticleList.test.js
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
 import ArticleList from "../components/ArticleList";
+
+// Mock the Article component
+jest.mock('../components/Article', () => {
+  return ({ title, date, preview }) => (
+    <div>
+      <h3>{title}</h3>
+      <small>{date}</small>
+      <p>{preview}</p>
+    </div>
+  );
+});
 
 const posts = [
   {
@@ -28,7 +40,7 @@ test("renders a <main> element", () => {
   expect(container.querySelector("main")).toBeInTheDocument();
 });
 
-test("renders a Article component for each post passed as a prop", () => {
+test("renders an Article component for each post passed as a prop", () => {
   const { container } = render(<ArticleList posts={posts} />);
-  expect(container.querySelector("main").children).toHaveLength(3);
+  expect(container.querySelectorAll("main > div")).toHaveLength(posts.length);
 });

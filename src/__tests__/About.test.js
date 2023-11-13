@@ -1,14 +1,14 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import About from "../components/About";
-import logo from "../assets/logo"
+import logo from "../assets/logo";
 
-test("renders a <aside> element", () => {
+test("renders an <aside> element", () => {
   const { container } = render(<About />);
   expect(container.querySelector("aside")).toBeInTheDocument();
 });
 
-test("renders a <img> with the blog logo and alt text of 'blog logo'", () => {
+test("renders an <img> with the blog logo and alt text of 'blog logo'", () => {
   render(<About image={logo} />);
   const img = screen.queryByAltText("blog logo");
   expect(img).toBeInTheDocument();
