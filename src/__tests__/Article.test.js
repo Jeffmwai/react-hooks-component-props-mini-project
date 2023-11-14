@@ -1,6 +1,7 @@
+// src/__tests__/Article.test.js
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import Article from "../components/Article";
+import Article from "../components/Article"; // Correct the import path
 
 test("renders an <article> element", () => {
   const { container } = render(
@@ -12,7 +13,6 @@ test("renders an <article> element", () => {
   );
   expect(container.querySelector("article")).toBeInTheDocument();
 });
-
 test("renders an <h3> with the title of the post", () => {
   render(
     <Article

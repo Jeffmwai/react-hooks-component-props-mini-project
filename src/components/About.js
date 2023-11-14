@@ -1,5 +1,5 @@
-// About.js
 import React from "react";
+import logo from "../assets/logo";
 
 const About = ({ image = "https://via.placeholder.com/215", about }) => {
   return (
